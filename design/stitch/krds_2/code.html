@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>공공 시설물·전산 자산 장애 관리</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#2f1500", "input": "#e2e8f0", "on-error-container": "#93000a", "secondary-fixed": "#dbe1ff", "error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb77d", "muted": "#f1f5f9", "on-tertiary": "#ffffff", "inverse-primary": "#bec6e0", "primary-fixed": "#dae2fd", "on-secondary-fixed": "#00174b", "surface-tint": "#565e74", "surface-container": "#e5eeff", "surface-dim": "#cbdbf5", "outline-variant": "#c6c6cd", "on-error": "#ffffff", "secondary-container": "#316bf3", "surface-container-highest": "#d3e4fe", "error": "#ba1a1a", "card": "#ffffff", "status-in-progress": "#2563eb", "on-secondary-container": "#fefcff", "status-critical": "#dc2626", "status-sla-warning": "#d97706", "secondary": "#0051d5", "surface-container-low": "#eff4ff", "on-tertiary-container": "#c76c00", "status-resolved": "#16a34a", "on-primary-fixed-variant": "#3f465c", "on-secondary-fixed-variant": "#003ea8", "on-tertiary-fixed-variant": "#6e3900", "on-primary-container": "#7c839b", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "foreground": "#090d16", "primary-container": "#131b2e", "outline": "#76777d", "on-background": "#0b1c30", "background": "#ffffff", "on-secondary": "#ffffff", "inverse-surface": "#213145", "on-surface-variant": "#45464d", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#131b2e", "on-surface": "#0b1c30", "border": "#e2e8f0", "tertiary": "#000000", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "surface-variant": "#d3e4fe", "primary-fixed-dim": "#bec6e0", "surface-bright": "#f8f9ff", "status-received": "#64748b", "on-tertiary-fixed": "#2f1500", "secondary-fixed-dim": "#b4c5ff", "tertiary-fixed": "#ffdcc3", "primary": "#000000" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "margin-desktop": "2rem", "margin-tablet": "1.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1rem" }, "fontFamily": { "body-lg": ["Geist"], "display-hero": ["Geist"], "headline-md": ["Geist"], "label-md": ["Geist"], "headline-lg": ["Geist"], "caption": ["Geist"], "body-md": ["Geist"], "headline-sm": ["Geist"], "label-sm": ["Geist"], "body-sm": ["Geist"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "21px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script></head><body class="min-h-screen bg-surface font-body-md text-on-surface flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-background border-b border-border shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-[1440px] mx-auto px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center justify-center w-8 h-8 rounded-full border border-secondary/20 bg-surface-container-low"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#0051d5" stroke-width="1.5"></circle><path d="M12 4C14.2091 4 16 5.79086 16 8C16 10.2091 14.2091 12 12 12C9.79086 12 8 13.7909 8 16C8 18.2091 9.79086 20 12 20" stroke="#dc2626" stroke-linecap="round" stroke-width="1.5"></path><circle cx="12" cy="12" fill="#0051d5" r="2"></circle></svg></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-secondary tracking-tight">공공 시설물·전산 자산 장애 관리</span><span class="font-caption text-caption text-on-surface-variant">장애 접수 및 처리</span></div></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-secondary border-b-2 border-secondary font-headline-sm"><a aria-current="page" class="inline-flex items-center h-full px-space-xs transition-colors text-secondary border-b-2 border-secondary font-headline-sm" data-path="operation-dashboard" href="#">운영 대시보드</a><a class="inline-flex items-center h-full px-space-xs font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="operation-incident-reports" href="#">운영 신고 목록</a><a class="inline-flex items-center h-full px-space-xs font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="asset-management" href="#">자산 관리</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="hidden sm:inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container-low border border-secondary-fixed text-secondary font-label-sm text-label-sm"><span>운영 담당자</span></div><div class="h-6 w-px bg-border hidden sm:block"></div><div class="flex items-center gap-space-sm"><div class="hidden xl:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">운영 담당자</span><span class="font-caption text-caption text-on-surface-variant">담당 부서</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full flex-1 pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- Main Canvas Container -->
+<div class="max-w-[1440px] w-full mx-auto px-margin-desktop py-space-xl flex flex-col gap-space-lg"><!-- Dashboard Title Bar & Quick Operations Toolbar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md pb-space-xs">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+
+<h1 class="font-headline-lg text-headline-lg text-[#0F172A] tracking-tight">
+            운영 대시보드 
+</h1>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+          미처리 신고와 처리 기한을 확인하고 다음 조치를 정하는 화면
+        </p>
+</div>
+<!-- Action Toolbar -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<!-- Date Selector -->
+<div class="inline-flex items-center bg-card border border-border p-0.5 shadow-sm">
+<button class="px-3 py-1.5 font-label-sm text-label-sm bg-[#003675] text-white font-medium shadow-xs" type="button">
+            오늘 · 예시 데이터
+          </button>
+<button class="px-3 py-1.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-muted transition-colors" type="button">
+            최근 7일
+          </button>
+<button class="px-3 py-1.5 font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-muted transition-colors" type="button">
+            최근 30일
+          </button>
+</div>
+<!-- Refresh Button -->
+<button class="inline-flex items-center gap-1.5 px-3 py-2 bg-card border border-border text-on-surface hover:bg-muted font-label-sm text-label-sm transition-all shadow-sm active:scale-95" id="btn-manual-refresh" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">refresh</span>
+<span>새로고침</span>
+</button>
+<!-- Primary Incident Dispatch Trigger -->
+<button class="inline-flex items-center gap-2 px-4 py-2 bg-[#003675] hover:bg-[#002855] text-white font-label-md text-label-md transition-all shadow-sm active:scale-95" type="button">
+<span class="material-symbols-outlined text-[19px]">add_circle</span>
+<span class="font-semibold">+ 신고 작성</span>
+</button>
+</div>
+</div>
+<!-- SECTION 1: Top KPI Summary Cards (Sharp Corners) -->
+<section aria-label="주요 관제 현황 지표" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Card 1: 금일 신규 접수 -->
+<div class="bg-card border border-[#D8DDE6] p-5 shadow-xs hover:border-secondary/40 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md font-medium">금일 신규 장애 접수</span>
+<div class="w-8 h-8 bg-surface-container-low flex items-center justify-center text-[#003675]">
+<span class="material-symbols-outlined text-[20px]">report_problem</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-[32px] leading-none text-[#0F172A] font-bold tracking-tight">14</span>
+<span class="font-label-md text-label-md text-on-surface-variant">건</span>
+</div>
+<div class="mt-2.5 flex items-center gap-1.5 text-caption">
+<span class="inline-flex items-center font-semibold text-[#DC2626]">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+              +3건 증가
+            </span>
+<span class="text-on-surface-variant/80">전일 동시간 대비</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border flex items-center justify-between text-caption text-on-surface-variant">
+<span>이번 달 접수</span>
+<span class="font-mono font-medium text-on-surface bg-surface-container px-2 py-0.5">142건</span>
+</div>
+</div>
+<!-- Card 2: 조치 중 -->
+<div class="bg-card border border-[#D8DDE6] p-5 shadow-xs hover:border-secondary/40 transition-all flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-md text-label-md font-medium">조치 중</span>
+<div class="w-8 h-8 bg-blue-50 flex items-center justify-center text-[#003675]">
+<span class="material-symbols-outlined text-[20px]">engineering</span>
+</div>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-[32px] leading-none text-[#003675] font-bold tracking-tight">8</span>
+<span class="font-label-md text-label-md text-on-surface-variant">건</span>
+</div>
+<div class="mt-2.5 flex items-center gap-3 text-caption">
+<span class="inline-flex items-center gap-1 text-on-surface font-medium">
+
+              긴급 <strong class="text-[#DC2626]">2</strong>건
+            </span>
+<span class="text-border">·</span>
+<span class="inline-flex items-center gap-1 text-on-surface font-medium">
+
+              일반 <strong class="text-on-surface">6</strong>건
+            </span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-border flex items-center justify-between text-caption text-on-surface-variant">
+<span>인력 투입 현황</span>
+<span class="font-label-sm text-[11px] text-on-surface font-medium">현장 배정 6 · 원격 2</span>
+</div>
+</div>
+<!-- Card 3: SLA 초과 임박 / 지연 -->
+<div class="bg-[#FFF5F5] border-[1.5px] border-[#EF4444] p-5 shadow-xs flex flex-col justify-between relative overflow-hidden">
+<div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[#D32F2F] text-[18px]">warning</span>
+<span class="font-label-md text-label-md font-bold text-[#D32F2F]">SLA 초과 임박·지연</span>
+</div>
+<span class="px-1.5 py-0.5 text-[10px] font-bold bg-[#DC2626] text-white">경보</span>
+</div>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline-lg text-[32px] leading-none text-[#D32F2F] font-bold tracking-tight">2</span>
+<span class="font-label-md text-label-md text-[#B91C1C]">건</span>
+</div>
+<div class="mt-2.5 flex items-center gap-1.5 text-caption font-semibold text-[#B91C1C]">
+<span>⚠️ 초과 1건 / 기한 임박 1건</span>
+</div>
+</div>
+<div class="mt-4 pt-3 border-t border-red-200 flex items-center justify-between text-caption">
+<span class="text-red-700 font-medium">처리 우선순위</span>
+<span class="font-label-sm text-[11px] font-bold bg-white text-[#DC2626] border border-red-200 px-2 py-0.5 shadow-2xs">
+            우선 확인 필요
+          </span>
+</div>
+</div>
+</section>
+<!-- SECTION 3: Bottom Priority Table (우선 처리할 신고) -->
+<section class="bg-card border border-[#D8DDE6] shadow-xs overflow-hidden flex flex-col">
+<!-- Table Header & Filter Tabs -->
+<div class="p-5 border-b border-border flex flex-col md:flex-row md:items-center justify-between gap-3">
+<div class="flex items-center gap-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#DC2626] text-[22px]">emergency</span>
+<h2 class="font-headline-md text-headline-md text-[#0F172A] font-bold">우선 처리할 신고</h2>
+</div>
+<span class="px-2 py-0.5 text-caption font-semibold bg-red-100 text-[#DC2626] border border-red-200">
+            우선 처리
+          </span>
+</div>
+<!-- Filter Controls & Action Link -->
+<div class="flex items-center gap-3">
+<div class="inline-flex bg-surface-container-low p-1 border border-border text-caption">
+<button class="px-2.5 py-1 bg-white font-medium text-on-surface shadow-xs" type="button">전체 긴급 건</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface transition-colors" type="button">SLA 초과/임박만</button>
+<button class="px-2.5 py-1 text-on-surface-variant hover:text-on-surface transition-colors" type="button">현장 대응</button>
+</div>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm text-[#003675] hover:text-[#002855] font-semibold hover:underline" data-path="operation-incident-reports" href="#">
+<span>상세 목록 전체보기</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- High Density Incident Table Container -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[1080px]">
+<thead>
+<tr class="bg-muted/70 border-b border-border text-on-surface font-label-sm text-label-sm tracking-tight h-10">
+<th class="py-2.5 px-4 font-semibold w-[140px]" scope="col">티켓번호</th>
+<th class="py-2.5 px-3 font-semibold w-[90px]" scope="col">긴급도</th>
+<th class="py-2.5 px-3 font-semibold w-[220px]" scope="col">대상 자산명</th>
+<th class="py-2.5 px-4 font-semibold" scope="col">장애 증상 요약</th>
+<th class="py-2.5 px-3 font-semibold w-[150px]" scope="col">담당자</th>
+<th class="py-2.5 px-3 font-semibold w-[140px]" scope="col">SLA 남은시간</th>
+<th class="py-2.5 px-3 font-semibold w-[120px]" scope="col">진행 상태</th>
+<th class="py-2.5 px-4 font-semibold w-[90px] text-center" scope="col">관리</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border text-body-sm font-body-sm text-on-surface">
+<!-- Row 1: SLA 임박 12분 (심각) -->
+<tr class="hover:bg-red-50/40 transition-colors group">
+<td class="py-3 px-4 font-mono font-semibold text-[#003675] flex items-center gap-1.5">
+
+                INC-2025-0892
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-bold bg-[#FEE2E2] text-[#DC2626] border border-red-200">
+                  심각 (L1)
+                </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">SW-BLD2-3F-01</span>
+<span class="font-caption text-[11px] text-on-surface-variant">시청 제2별관 3층 백본</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 font-medium text-[#0F172A]">
+<span>광케이블 트렁크 포트 플래핑 및 청사 유선망 간헐적 단절</span>
+</div>
+<div class="text-caption text-on-surface-variant font-mono">영향도: 행정포털 및 전자결재 40개 부서 통신 지연</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 bg-[#003675] text-white flex items-center justify-center font-bold text-[10px]">김</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">김철수 주무관</span>
+<span class="font-caption text-[10px] text-on-surface-variant">네트워크운영팀</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<!-- Red Pulsating countdown pill (Sharp) -->
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 font-mono text-[12px] font-bold bg-red-100 text-[#DC2626] border border-red-300 animate-pulse">
+
+                  00:12:40 남음
+                </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-medium bg-blue-50 text-[#003675] border border-blue-200">
+                  조치중 (현장급파)
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="px-2.5 py-1 bg-white hover:bg-muted border border-border text-caption text-on-surface font-medium transition-colors shadow-2xs" type="button">
+                  상세보기
+                </button>
+</td>
+</tr>
+<!-- Row 2: SLA 24분 (심각) -->
+<tr class="hover:bg-amber-50/30 transition-colors group">
+<td class="py-3 px-4 font-mono font-semibold text-[#003675] flex items-center gap-1.5">
+
+                INC-2025-0891
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-bold bg-[#FEE2E2] text-[#DC2626] border border-red-200">
+                  심각 (L1)
+                </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">IOT-SEJONG-09</span>
+<span class="font-caption text-[11px] text-on-surface-variant">세종대로 스마트신호제어기</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 font-medium text-[#0F172A]">
+<span>바닥신호등 보조 전원 단전 경보 및 제어기 통신 끊김</span>
+</div>
+<div class="text-caption text-on-surface-variant font-mono">영향도: 세종대로 사거리 교차로 교통 관제 센서 1기 오프라인</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 bg-slate-700 text-white flex items-center justify-center font-bold text-[10px]">이</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">이진혁 주무관</span>
+<span class="font-caption text-[10px] text-on-surface-variant">스마트교통팀</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 font-mono text-[12px] font-bold bg-amber-50 text-[#D97706] border border-amber-300">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                  00:24:15 남음
+                </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-medium bg-blue-50 text-[#003675] border border-blue-200">
+                  조치중 (원격진단)
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="px-2.5 py-1 bg-white hover:bg-muted border border-border text-caption text-on-surface font-medium transition-colors shadow-2xs" type="button">
+                  상세보기
+                </button>
+</td>
+</tr>
+<!-- Row 3: SLA 38분 (주의) -->
+<tr class="hover:bg-muted/40 transition-colors group">
+<td class="py-3 px-4 font-mono font-semibold text-[#003675] flex items-center gap-1.5">
+
+                INC-2025-0888
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-bold bg-[#FEF3C7] text-[#D97706] border border-amber-200">
+                  주의 (L2)
+                </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">UPS-SRV-MAIN</span>
+<span class="font-caption text-[11px] text-on-surface-variant">본관 지하 데이터센터 UPS</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 font-medium text-[#0F172A]">
+<span>배터리 4번 모듈 온도 이상 경보(48°C) 및 전원 불균형 감지</span>
+</div>
+<div class="text-caption text-on-surface-variant font-mono">영향도: 바이패스 모드 자동 전환 방지 냉각팬 가동</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 bg-slate-700 text-white flex items-center justify-center font-bold text-[10px]">박</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">박정우 팀장</span>
+<span class="font-caption text-[10px] text-on-surface-variant">설비안전과</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 font-mono text-[12px] font-bold bg-amber-50 text-[#D97706] border border-amber-300">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                  00:38:50 남음
+                </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                  배정완료
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="px-2.5 py-1 bg-white hover:bg-muted border border-border text-caption text-on-surface font-medium transition-colors shadow-2xs" type="button">
+                  상세보기
+                </button>
+</td>
+</tr>
+<!-- Row 4: SLA 01:15:00 (주의) -->
+<tr class="hover:bg-muted/40 transition-colors group">
+<td class="py-3 px-4 font-mono font-semibold text-[#003675] flex items-center gap-1.5">
+
+                INC-2025-0885
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-bold bg-[#FEF3C7] text-[#D97706] border border-amber-200">
+                  주의 (L2)
+                </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">KSK-MINWON-102</span>
+<span class="font-caption text-[11px] text-on-surface-variant">시민봉사실 무인발급기 02호</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 font-medium text-[#0F172A]">
+<span>지문인식 광학 센서 인식 오류 및 IC카드 리더 통신 타임아웃</span>
+</div>
+<div class="text-caption text-on-surface-variant font-mono">영향도: 주민등록등본 발급 대기 민원 발생 (1호기 대체 안내 중)</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 bg-slate-600 text-white flex items-center justify-center font-bold text-[10px]">최</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">최민석 대리</span>
+<span class="font-caption text-[10px] text-on-surface-variant">단말유지보수단</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-1 font-mono text-[12px] font-medium bg-blue-50 text-[#2563EB] border border-blue-200">
+                  01:15:00 남음
+                </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-medium bg-blue-50 text-[#003675] border border-blue-200">
+                  조치중 (현장)
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="px-2.5 py-1 bg-white hover:bg-muted border border-border text-caption text-on-surface font-medium transition-colors shadow-2xs" type="button">
+                  상세보기
+                </button>
+</td>
+</tr>
+<!-- Row 5: SLA 01:45:20 (일반) -->
+<tr class="hover:bg-muted/40 transition-colors group">
+<td class="py-3 px-4 font-mono font-semibold text-[#003675] flex items-center gap-1.5">
+
+                INC-2025-0881
+              </td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                  일반 (L3)
+                </span>
+</td>
+<td class="py-3 px-3">
+<div class="flex flex-col">
+<span class="font-medium text-on-surface">NET-SW-JN-0104</span>
+<span class="font-caption text-[11px] text-on-surface-variant">종로구청 본관 L3 스위치</span>
+</div>
+</td>
+<td class="py-3 px-4">
+<div class="flex items-center gap-1.5 font-medium text-[#0F172A]">
+<span>VLAN-100 대외망 패킷 손실률 42% 초과 감지 경보</span>
+</div>
+<div class="text-caption text-on-surface-variant font-mono">영향도: 보건소 전자처방전 전송 일부 재시도 발생</div>
+</td>
+<td class="py-3 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 bg-slate-600 text-white flex items-center justify-center font-bold text-[10px]">강</span>
+<div class="flex flex-col">
+<span class="text-on-surface font-medium">강수현 주임</span>
+<span class="font-caption text-[10px] text-on-surface-variant">정보통신과</span>
+</div>
+</div>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-1 font-mono text-[12px] font-medium bg-slate-100 text-slate-700 border border-slate-200">
+                  01:45:20 남음
+                </span>
+</td>
+<td class="py-3 px-3">
+<span class="inline-flex items-center px-2 py-0.5 text-[11px] font-medium bg-blue-50 text-[#003675] border border-blue-200">
+                  조치중 (원격)
+                </span>
+</td>
+<td class="py-3 px-4 text-center">
+<button class="px-2.5 py-1 bg-white hover:bg-muted border border-border text-caption text-on-surface font-medium transition-colors shadow-2xs" type="button">
+                  상세보기
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Incident Action Protocol Ribbon -->
+<div class="bg-surface-container-low px-5 py-3 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-caption">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-[#003675]">info</span>
+<span>처리 기한은 신고별로 지정되며, 기한 임박·초과 여부를 표시합니다.</span>
+</div>
+<div class="flex items-center gap-4 text-on-surface font-medium">
+<span>표시 건수: <strong>5 / 총 8건</strong></span>
+
+<span class="text-[#003675] font-semibold">예시 데이터</span>
+</div>
+</div>
+</section></div>
+</div>
+<script>
+  // Static mockup; no live data source is connected.
+
+  })();
+</script></main><footer class="w-full bg-background border-t border-border mt-auto"><div class="max-w-[1440px] mx-auto px-gutter-desktop py-space-lg"><div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-sm font-caption text-caption text-on-surface-variant"><div class="flex flex-wrap items-center gap-space-xs"><span>공공 시설물·전산 자산 장애 관리</span><span>내부 업무 서비스</span></div><div class="text-on-surface-variant/80">화면 시안 · 예시 데이터</div></div></div></footer>
+
+</body></html>
