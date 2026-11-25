@@ -1,0 +1,467 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_standard" name="shell-type"><title>공공 시설물·전산 자산 장애 관리</title><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "tertiary-container": "#2f1500", "input": "#e2e8f0", "on-error-container": "#93000a", "secondary-fixed": "#dbe1ff", "error-container": "#ffdad6", "tertiary-fixed-dim": "#ffb77d", "muted": "#f1f5f9", "on-tertiary": "#ffffff", "inverse-primary": "#bec6e0", "primary-fixed": "#dae2fd", "on-secondary-fixed": "#00174b", "surface-tint": "#565e74", "surface-container": "#e5eeff", "surface-dim": "#cbdbf5", "outline-variant": "#c6c6cd", "on-error": "#ffffff", "secondary-container": "#316bf3", "surface-container-highest": "#d3e4fe", "error": "#ba1a1a", "card": "#ffffff", "status-in-progress": "#2563eb", "on-secondary-container": "#fefcff", "status-critical": "#dc2626", "status-sla-warning": "#d97706", "secondary": "#0051d5", "surface-container-low": "#eff4ff", "on-tertiary-container": "#c76c00", "status-resolved": "#16a34a", "on-primary-fixed-variant": "#3f465c", "on-secondary-fixed-variant": "#003ea8", "on-tertiary-fixed-variant": "#6e3900", "on-primary-container": "#7c839b", "surface-container-high": "#dce9ff", "on-primary": "#ffffff", "foreground": "#090d16", "primary-container": "#131b2e", "outline": "#76777d", "on-background": "#0b1c30", "background": "#ffffff", "on-secondary": "#ffffff", "inverse-surface": "#213145", "on-surface-variant": "#45464d", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#131b2e", "on-surface": "#0b1c30", "border": "#e2e8f0", "tertiary": "#000000", "surface": "#f8f9ff", "inverse-on-surface": "#eaf1ff", "surface-variant": "#d3e4fe", "primary-fixed-dim": "#bec6e0", "surface-bright": "#f8f9ff", "status-received": "#64748b", "on-tertiary-fixed": "#2f1500", "secondary-fixed-dim": "#b4c5ff", "tertiary-fixed": "#ffdcc3", "primary": "#000000" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "margin-desktop": "2rem", "margin-tablet": "1.5rem", "gutter-desktop": "1.5rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "gutter": "1rem", "margin": "1rem" }, "fontFamily": { "body-lg": ["Geist"], "display-hero": ["Geist"], "headline-md": ["Geist"], "label-md": ["Geist"], "headline-lg": ["Geist"], "caption": ["Geist"], "body-md": ["Geist"], "headline-sm": ["Geist"], "label-sm": ["Geist"], "body-sm": ["Geist"] }, "fontSize": { "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-hero": ["28px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-md": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "30px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "body-md": ["14px", { "lineHeight": "21px", "fontWeight": "400" }], "headline-sm": ["16px", { "lineHeight": "22px", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }] } } } };</script></head><body class="min-h-screen bg-surface font-body-md text-on-surface flex flex-col"><header class="fixed top-0 left-0 w-full z-50 bg-background border-b border-border shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-[1440px] mx-auto px-gutter-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center justify-center w-8 h-8 rounded-full border border-secondary/20 bg-surface-container-low"><svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="#0051d5" stroke-width="1.5"></circle><path d="M12 4C14.2091 4 16 5.79086 16 8C16 10.2091 14.2091 12 12 12C9.79086 12 8 13.7909 8 16C8 18.2091 9.79086 20 12 20" stroke="#dc2626" stroke-linecap="round" stroke-width="1.5"></path><circle cx="12" cy="12" fill="#0051d5" r="2"></circle></svg></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-secondary tracking-tight">공공 시설물·전산 자산 장애 관리</span><span class="font-caption text-caption text-on-surface-variant">장애 접수 및 처리</span></div></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-secondary border-b-2 border-secondary font-headline-sm"><a class="inline-flex items-center h-full px-space-xs font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="operation-dashboard" href="#">운영 대시보드</a><a class="inline-flex items-center h-full px-space-xs font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="operation-incident-reports" href="#">운영 신고 목록</a><a class="inline-flex items-center h-full px-space-xs font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors border-b-2 border-transparent" data-path="asset-management" href="#">자산 관리</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="hidden sm:inline-flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low border border-secondary-fixed text-secondary font-label-sm text-label-sm"><span>운영 담당자</span></div><div class="h-6 w-px bg-border hidden sm:block"></div><div class="flex items-center gap-space-sm"><div class="hidden xl:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">운영 담당자</span><span class="font-caption text-caption text-on-surface-variant">담당 부서</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div><div class="w-full bg-surface-container-low border-t border-border/60"><div class="h-9 max-w-[1440px] mx-auto px-gutter-desktop flex items-center justify-between font-caption text-caption text-on-surface-variant overflow-x-auto whitespace-nowrap"><div class="flex items-center gap-space-sm"><span>예시 화면</span><span>처리 기한은 신고별로 관리</span><span>운영 화면</span><span class="font-mono"></span></div><div class="hidden md:flex items-center gap-space-xs text-on-surface-variant/80"><span class="material-symbols-outlined text-[14px] text-status-resolved">verified</span><span></span></div></div></div></header><main class="w-full flex-1 pt-[100px] bg-surface"><div class="flex flex-col w-full relative overflow-x-hidden min-h-[calc(100vh-100px)]">
+<!-- ========================================================================= -->
+<!-- LAYER 1: BACKGROUND UNDERLAY (Incident Ticket Management Table View)      -->
+<!-- ========================================================================= -->
+<div class="w-full max-w-[1440px] mx-auto px-gutter-desktop py-space-lg flex flex-col gap-space-lg opacity-85 select-none pointer-events-none filter blur-[0.4px]">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-xs">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span>홈</span>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<span>관제센터 운영관리</span>
+<span class="material-symbols-outlined text-[13px]">chevron_right</span>
+<span class="text-on-surface font-label-sm">운영 신고 목록</span>
+</div>
+<div class="flex items-center gap-space-md">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">운영 장애 및 시설물 신고 목록</h1>
+<span class="font-caption text-caption px-space-sm py-0.5 bg-surface-container-high text-secondary font-label-md">최근 갱신 활성</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded bg-card text-on-surface font-body-sm shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>대장 엑셀 내보내기</span>
+</div>
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded bg-primary text-on-primary font-label-md shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+<span>수기 긴급접수</span>
+</div>
+</div>
+</div>
+<!-- Status Category Tabs -->
+<div class="flex items-center gap-space-xs overflow-x-auto pb-space-xs">
+<div class="flex items-center gap-space-xs px-space-md py-2 rounded bg-card font-label-md text-label-md text-on-surface shadow-sm">
+<span>전체 신고</span>
+<span class="px-1.5 py-0.5 rounded bg-muted text-on-surface-variant font-mono text-[11px] font-bold">48</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-2 rounded bg-card font-label-md text-label-md text-on-surface shadow-sm">
+<span>신규 접수</span>
+<span class="px-1.5 py-0.5 rounded bg-slate-100 text-status-received font-mono text-[11px] font-bold">6</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-2 rounded bg-surface-container-high text-secondary font-label-md text-label-md shadow-sm">
+<span>조치 진행 중</span>
+<span class="px-1.5 py-0.5 rounded bg-secondary text-on-primary font-mono text-[11px] font-bold">8</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-2 rounded bg-card font-label-md text-label-md text-on-surface shadow-sm">
+<span>SLA 마감 임박</span>
+<span class="px-1.5 py-0.5 rounded bg-amber-100 text-status-sla-warning font-mono text-[11px] font-bold">2</span>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-2 rounded bg-card font-label-md text-label-md text-on-surface shadow-sm">
+<span>조치 완료</span>
+<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-status-resolved font-mono text-[11px] font-bold">32</span>
+</div>
+</div>
+<!-- Filter Control Strip -->
+<div class="p-space-md bg-card shadow-sm flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex flex-wrap items-center gap-space-sm flex-1 min-w-[280px]">
+<div class="h-9 px-space-sm bg-muted rounded flex items-center gap-space-xs text-on-surface-variant text-body-sm w-72">
+<span class="material-symbols-outlined text-[18px]">search</span>
+<span class="text-on-surface-variant/70">티켓번호, 자산명, 신고자명 검색</span>
+</div>
+<div class="h-9 px-space-sm bg-muted rounded flex items-center justify-between gap-space-md text-body-sm text-on-surface min-w-[130px]">
+<span>자산 유형: 전체</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+<div class="h-9 px-space-sm bg-muted rounded flex items-center justify-between gap-space-md text-body-sm text-on-surface min-w-[120px]">
+<span>발생 관할 구역</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-caption text-caption text-on-surface-variant">정렬 기준: 접수 최신순</span>
+<div class="w-8 h-8 rounded bg-muted flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</div>
+</div>
+</div>
+<!-- Background Table Component -->
+<div class="w-full bg-card shadow-sm overflow-hidden flex flex-col">
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-space-sm px-space-md py-space-sm bg-muted font-label-sm text-label-sm text-on-surface-variant items-center uppercase tracking-wider">
+<div class="col-span-2">관리번호 / 접수일시</div>
+<div class="col-span-3">대상 자산 및 위치</div>
+<div class="col-span-3">장애 신고 내용 요약</div>
+<div class="col-span-1 text-center">우선순위</div>
+<div class="col-span-1 text-center">진행상태</div>
+<div class="col-span-2 text-right">잔여 SLA 대응한도</div>
+</div>
+<!-- Row 1: Selected / Clicked Row (Active Drawer Target) -->
+<div class="grid grid-cols-12 gap-space-sm px-space-md py-space-md bg-surface-container-low font-body-sm text-body-sm items-center relative transition-all">
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
+<div class="col-span-2 flex flex-col">
+<span class="font-mono font-bold text-secondary text-headline-sm">#INC-2026-084</span>
+<span class="font-caption text-caption text-on-surface-variant">2026-11-25 14:05:12</span>
+</div>
+<div class="col-span-3 flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">[전산] 본관 3층 백본스위치 #02</span>
+<span class="font-caption text-caption text-on-surface-variant">자산코드: AST-IT-0302 (본청사 통신실)</span>
+</div>
+<div class="col-span-3 flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface truncate">3층 구역 내부망 트래픽 급증 및 통신 지연 경보</span>
+<span class="font-caption text-caption text-secondary">신고자: 행정지원과 박지훈 주무관</span>
+</div>
+<div class="col-span-1 flex justify-center">
+<span class="px-2 py-0.5 bg-red-100 text-status-critical font-label-sm text-[11px] font-bold">L1 초긴급</span>
+</div>
+<div class="col-span-1 flex justify-center">
+<span class="px-2.5 py-0.5 bg-amber-50 text-status-sla-warning font-label-sm text-[12px] font-semibold">조치중</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-space-xs font-mono font-bold text-status-critical">
+<span class="material-symbols-outlined text-[16px]">alarm</span>
+<span>14분 08초 잔여</span>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 gap-space-sm px-space-md py-space-md bg-card font-body-sm text-body-sm items-center">
+<div class="col-span-2 flex flex-col">
+<span class="font-mono text-on-surface font-medium">#INC-2026-083</span>
+<span class="font-caption text-caption text-on-surface-variant">2026-11-25 13:48:20</span>
+</div>
+<div class="col-span-3 flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">[시설] 별관 지하 기계실 급수펌프 #01</span>
+<span class="font-caption text-caption text-on-surface-variant">자산코드: AST-FAC-0089</span>
+</div>
+<div class="col-span-3 flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface truncate">압력 밸브 수압 저하 및 센서 데이터 이상 징후</span>
+<span class="font-caption text-caption text-on-surface-variant">신고자: 시설운영팀 정우성</span>
+</div>
+<div class="col-span-1 flex justify-center">
+<span class="px-2 py-0.5 rounded-full bg-amber-100 text-status-sla-warning font-label-sm text-[11px]">L2 주의</span>
+</div>
+<div class="col-span-1 flex justify-center">
+<span class="px-2.5 py-0.5 rounded-full bg-slate-100 text-status-received font-label-sm text-[12px]">신규접수</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-space-xs font-mono text-on-surface-variant">
+<span>02:14:40</span>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 gap-space-sm px-space-md py-space-md bg-card font-body-sm text-body-sm items-center">
+<div class="col-span-2 flex flex-col">
+<span class="font-mono text-on-surface font-medium">#INC-2026-082</span>
+<span class="font-caption text-caption text-on-surface-variant">2026-11-25 13:12:05</span>
+</div>
+<div class="col-span-3 flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">[전산] 청사 통합출입 게이트 제어기 #04</span>
+<span class="font-caption text-caption text-on-surface-variant">자산코드: AST-SEC-0104</span>
+</div>
+<div class="col-span-3 flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface truncate">RF 카드리더기 인증 지연 및 서버 재연결 루프</span>
+<span class="font-caption text-caption text-on-surface-variant">신고자: 보안관제센터 이한솔</span>
+</div>
+<div class="col-span-1 flex justify-center">
+<span class="px-2 py-0.5 rounded-full bg-emerald-100 text-status-resolved font-label-sm text-[11px]">L3 일반</span>
+</div>
+<div class="col-span-1 flex justify-center">
+<span class="px-2.5 py-0.5 rounded-full bg-emerald-50 text-status-resolved font-label-sm text-[12px]">완료</span>
+</div>
+<div class="col-span-2 flex items-center justify-end gap-space-xs font-mono text-status-resolved">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>규정 준수 완료</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ========================================================================= -->
+<!-- LAYER 2: BACKDROP OVERLAY                                                 -->
+<!-- ========================================================================= -->
+<div aria-hidden="true" class="fixed inset-0 top-[100px] z-40 bg-slate-900/45 backdrop-blur-[2px] transition-opacity duration-300"></div>
+<!-- ========================================================================= -->
+<!-- LAYER 3: SLIDE-OVER DRAWER (Incident Detail & Immutable Audit Panel)      -->
+<!-- ========================================================================= -->
+<aside aria-labelledby="drawer-ticket-id" aria-modal="true" class="fixed right-0 top-[100px] bottom-0 z-50 w-full max-w-[640px] bg-card shadow-2xl flex flex-col transition-transform duration-300 transform translate-x-0" role="dialog" style="box-shadow: -10px 0 36px rgba(11, 28, 48, 0.18);">
+<!-- Drawer Fixed Header -->
+<div class="px-space-lg py-space-md bg-surface-container-low shrink-0 flex flex-col gap-space-xs">
+<!-- Top Tag & Security Breadcrumb -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs font-caption text-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[15px] text-secondary">verified_user</span>
+<span class="font-medium text-secondary">신고 처리 이력</span>
+<span class="text-on-surface-variant/40">•</span>
+
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="font-caption text-caption text-on-surface-variant hidden sm:inline">[Esc] 닫기</span>
+<button aria-label="패널 닫기" class="w-8 h-8 hover:bg-surface-container-highest transition-colors flex items-center justify-center text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- Ticket Identity & Live Urgency Status -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm pt-space-xs">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-mono font-bold text-display-hero text-on-surface tracking-tight" id="drawer-ticket-id">
+            #INC-2026-084
+          </h2>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-amber-50 text-status-sla-warning font-label-sm text-label-sm font-semibold">
+
+            조치중
+          </span>
+</div>
+<!-- Live SLA Alert Badge -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-red-50 text-status-critical font-label-md text-label-md font-bold animate-pulse">
+<span class="material-symbols-outlined text-[16px]">timer</span>
+<span>SLA 마감 14분 전</span>
+</div>
+</div>
+</div>
+<!-- Drawer Scrollable Content -->
+<div class="flex-1 overflow-y-auto px-space-lg py-space-md flex flex-col gap-space-lg">
+<!-- SECTION 1: INCIDENT DETAIL SPECS -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">feed</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">장애 접수 상세 정보</h3>
+</div>
+<span class="font-caption text-caption px-space-xs py-0.5 bg-muted text-on-surface-variant font-mono">신고번호 자동발번</span>
+</div>
+<!-- Definition Grid Card -->
+<div class="bg-surface-bright p-space-md flex flex-col gap-space-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md text-body-sm">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">대상 자산 및 위치</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-0.5">[전산] 본관 3층 백본 스위치 #02</span>
+<span class="font-caption text-caption font-mono text-secondary">자산코드: AST-IT-0302</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">신고자 정보</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold mt-0.5">박지훈 주무관 (행정지원과)</span>
+<span class="font-caption text-caption text-on-surface-variant font-mono">내선전화: 02-2133-1492</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">접수 일시 / 처리 기한</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium mt-0.5">2026-11-25 14:05:12</span>
+<span class="font-caption text-caption text-status-critical font-semibold">처리 기한은 담당자가 신고별로 지정합니다</span>
+</div>
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">우선순위</span>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="px-2 py-0.5 bg-red-100 text-status-critical font-label-sm text-[11px] font-bold">긴급 (예시)</span>
+<span class="font-caption text-caption text-on-surface-variant">예시 신고 데이터</span>
+</div>
+</div>
+</div>
+<!-- Duplicate Defense Engine Notification Banner -->
+<div class="flex items-center gap-space-sm p-space-sm bg-emerald-50 text-status-resolved font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] shrink-0">check_circle</span>
+<div class="flex flex-col">
+<span class="font-bold text-status-resolved">중복 접수 검증 엔진 통과</span>
+<span class="font-caption text-caption text-on-surface-variant">동일 시각대 유사 신고 1건(이수진 주무관 건)이 자동 감지되어 본 티켓에 통합 병합되었습니다.</span>
+</div>
+</div>
+</div>
+<!-- Incident Description Box -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface font-medium flex items-center justify-between">
+<span>신고 증상 상세 내용</span>
+<span class="font-caption text-caption text-on-surface-variant font-normal">신고자 원문 텍스트</span>
+</label>
+<div class="p-space-md bg-muted font-body-sm text-body-sm text-on-surface leading-relaxed">
+            3층 사무실 구역 내부 행정망 속도 저하 및 온-나라 전자결재 포털 접속 순단 현상이 지속 발생 중입니다. 
+            스위치 허브 단자 포트 점검 및 네트워크 트래픽 급증(패킷 드랍) 원인 조치 요청드립니다.
+          </div>
+</div>
+</section>
+<!-- SECTION 2: OPERATOR ACTION FORM -->
+<section class="flex flex-col gap-space-md p-space-md bg-surface-container-low">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">engineering</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">관제 담당자 조치 처리</h3>
+</div>
+<span class="px-2 py-0.5 bg-surface-container-high text-secondary font-label-sm text-[11px] font-bold tracking-tight">
+            운영자 인가 필드
+          </span>
+</div>
+<!-- Status Change Stepper (Radio) -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface font-medium">처리 단계 상태 전환</span>
+<div class="grid grid-cols-3 gap-space-xs bg-muted p-1">
+<!-- Step 1: Received -->
+<button class="py-2 px-space-xs font-label-sm text-label-sm flex items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-status-resolved">check</span>
+<span>1. 접수완료</span>
+</button>
+<!-- Step 2: In-Progress (Current Active) -->
+<button class="py-2 px-space-xs bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-1 shadow-sm" type="button">
+
+<span>2. 조치중 (선택)</span>
+</button>
+<!-- Step 3: Resolved -->
+<button class="py-2 px-space-xs font-label-sm text-label-sm flex items-center justify-center gap-1 text-on-surface-variant hover:bg-card/50 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">task_alt</span>
+<span>3. 조치완료</span>
+</button>
+</div>
+</div>
+<!-- Assigned Operator Selection -->
+<div class="flex flex-col gap-space-xs">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="operator-select">
+            현장 조치 책임자 배정
+          </label>
+<div class="relative">
+<select class="w-full h-10 px-space-md pr-10 bg-card text-on-surface font-body-sm text-body-sm shadow-sm appearance-none focus:outline-none" id="operator-select">
+<option selected="">운영 담당자 (담당 부서 / 사번: SE-0412)</option>
+<option>이현우 선임연구원 (인프라관리팀 / 사번: NW-1092)</option>
+<option>박성태 팀장 (정보화담당관 긴급지휘 / 사번: SE-0018)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-on-surface-variant pointer-events-none text-[20px]">
+              expand_more
+            </span>
+</div>
+</div>
+<!-- Action Report Textarea -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm text-on-surface font-medium" for="action-log">
+              현장 조치 내역 및 기술 원인 분석 <span class="text-status-critical">*</span>
+</label>
+<span class="font-caption text-caption text-on-surface-variant">감사 증빙 기록</span>
+</div>
+<textarea class="w-full p-space-sm bg-card text-on-surface font-body-sm text-body-sm leading-relaxed shadow-sm focus:outline-none focus:ring-1 focus:ring-secondary" id="action-log" rows="3">3층 메인 통신 단자함 업링크 광패치 케이블 포트 1번 접촉 불량 및 패킷 에러 누적 확인. 예비 광코어 4번 라인으로 우회 절체 작업 진행 중. 트래픽 안정화 모니터링 5분 후 완료 검증 예정.</textarea>
+</div>
+<!-- Action Button -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<button class="w-full h-11 bg-primary text-on-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-space-xs shadow-md hover:bg-slate-800 active:scale-[0.99] transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>상태 변경 저장</span>
+</button>
+<span class="font-caption text-caption text-on-surface-variant/80 text-center">
+            변경 이력에는 변경자, 시각, 이전 값과 새 값이 기록됩니다.
+          </span>
+</div>
+</section>
+<!-- SECTION 3: AUDIT HISTORY TIMELINE -->
+<section class="flex flex-col gap-space-sm pb-space-lg">
+<!-- Section Header with Padlock Badge -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px] text-secondary">history</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">상태 변경 이력 및 감사 로그</h3>
+</div>
+<div class="flex items-center gap-1 px-2 py-0.5 bg-muted text-on-surface-variant font-caption text-caption">
+<span class="material-symbols-outlined text-[13px] text-status-resolved">lock</span>
+<span>일반 사용자는 이력을 수정하거나 삭제할 수 없습니다</span>
+</div>
+</div>
+<!-- Vertical Timeline Card -->
+<div class="bg-card p-space-md shadow-sm flex flex-col relative">
+<!-- Node 1: Latest (14:22:10) -->
+<div class="flex gap-space-md relative pb-space-lg">
+<!-- Node Vertical Bar -->
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-secondary-fixed"></div>
+<!-- Node Icon -->
+<div class="w-6 h-6 rounded-full bg-secondary text-on-primary flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+</div>
+<!-- Node Content -->
+<div class="flex flex-col gap-0.5 flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-blue-100 text-status-in-progress font-label-sm text-[11px] font-bold">상태 변경</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">김민수 (담당 부서 관리자)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">14:22:10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 leading-snug">
+                상태를 <strong class="text-status-received font-semibold">[접수]</strong>에서 <strong class="text-secondary font-semibold">[조치중]</strong>으로 전환. 현장 긴급 점검 인력 출동 및 광선로 우회 작업 착수.
+              </p>
+
+</div>
+</div>
+<!-- Node 2: Deduplication Engine (14:06:02) -->
+<div class="flex gap-space-md relative pb-space-lg">
+<!-- Node Vertical Bar -->
+<div class="absolute left-[11px] top-6 bottom-0 w-[2px] bg-secondary-fixed"></div>
+<!-- Node Icon -->
+<div class="w-6 h-6 rounded-full bg-surface-container-high text-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">call_merge</span>
+</div>
+<!-- Node Content -->
+<div class="flex flex-col gap-0.5 flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-emerald-100 text-status-resolved font-label-sm text-[11px] font-bold">중복 방지</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">유사 신고 확인</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">14:06:02</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 leading-snug">
+                같은 자산에 미해결 신고가 있어 유사 신고로 안내했습니다. 신고자가 별도 건으로 접수했습니다.
+              </p>
+</div>
+</div>
+<!-- Node 3: Initial Report (14:05:12) -->
+<div class="flex gap-space-md relative">
+<!-- Node Icon -->
+<div class="w-6 h-6 rounded-full bg-muted text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+<span class="material-symbols-outlined text-[14px]">flag</span>
+</div>
+<!-- Node Content -->
+<div class="flex flex-col gap-0.5 flex-1 min-w-0">
+<div class="flex flex-wrap items-center justify-between gap-1">
+<div class="flex items-center gap-space-xs">
+<span class="px-1.5 py-0.5 rounded bg-slate-100 text-status-received font-label-sm text-[11px] font-bold">신규 접수</span>
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">박지훈 주무관 (행정지원과)</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-mono">14:05:12</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface mt-1 leading-snug">
+                내부 행정 업무포털 속도 저하 장애 최초 접수. 우선순위와 처리 기한은 운영 담당자가 지정했습니다.
+              </p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Drawer Fixed Bottom Footer Strip -->
+<div class="px-space-lg py-space-sm bg-surface-bright flex items-center justify-between font-caption text-caption text-on-surface-variant shrink-0">
+<div class="flex items-center gap-space-xs">
+
+<span>화면 시안 · 예시 데이터</span>
+</div>
+<span class="font-mono">예시</span>
+</div>
+</aside>
+</div>
+<script>
+  // Simple drawer interaction handling for demonstration and accessibility
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const drawer = document.querySelector('aside[role="dialog"]');
+      const backdrop = document.querySelector('div[aria-hidden="true"]');
+      if (drawer && backdrop) {
+        drawer.style.transform = 'translateX(100%)';
+        backdrop.style.opacity = '0';
+        setTimeout(() => {
+          drawer.style.display = 'none';
+          backdrop.style.display = 'none';
+        }, 300);
+      }
+    }
+  });
+
+  const closeBtn = document.querySelector('button[aria-label="패널 닫기"]');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function() {
+      const drawer = document.querySelector('aside[role="dialog"]');
+      const backdrop = document.querySelector('div[aria-hidden="true"]');
+      if (drawer && backdrop) {
+        drawer.style.transform = 'translateX(100%)';
+        backdrop.style.opacity = '0';
+        setTimeout(() => {
+          drawer.style.display = 'none';
+          backdrop.style.display = 'none';
+        }, 300);
+      }
+    });
+  }
+</script></main><footer class="w-full bg-background border-t border-border mt-auto"><div class="max-w-[1440px] mx-auto px-gutter-desktop py-space-lg"><div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-space-sm font-caption text-caption text-on-surface-variant"><div class="flex flex-wrap items-center gap-space-xs"><span>공공 시설물·전산 자산 장애 관리</span><span class="text-border">·</span><span>내부 업무 서비스</span></div><div class="text-on-surface-variant/80">화면 시안 · 예시 데이터</div></div></div></footer>
+
+</body></html>
