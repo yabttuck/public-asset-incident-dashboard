@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, type FormEvent } from "react";
+import { useActionState, useEffect, useRef, type FormEvent } from "react";
 import { useFormStatus } from "react-dom";
 import {
   submitIncident,
@@ -34,16 +34,38 @@ function SubmitButtons({ showDuplicate }: { showDuplicate: boolean }) {
 export function IncidentForm({ assets }: { assets: AssetChoice[] }) {
   const initialState: IncidentFormState = { kind: "idle" };
   const [state, action] = useActionState(submitIncident, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+  const submittedValues = useRef<Record<string, string> | null>(null);
 
   function ensureIdempotencyKey(event: FormEvent<HTMLFormElement>) {
     const keyField = event.currentTarget.elements.namedItem("idempotency_key");
     if (keyField instanceof HTMLInputElement && !keyField.value) {
       keyField.value = crypto.randomUUID();
     }
+
+    const formData = new FormData(event.currentTarget);
+    submittedValues.current = Object.fromEntries(
+      ["idempotency_key", "asset_id", "location", "title", "priority", "description", "occurred_at"]
+        .map((name) => [name, String(formData.get(name) ?? "")] as const),
+    );
   }
 
+  useEffect(() => {
+    const values = submittedValues.current;
+    const form = formRef.current;
+    if (!values || !form || state.kind === "idle") return;
+
+    for (const [name, value] of Object.entries(values)) {
+      const field = form.elements.namedItem(name);
+      if (field instanceof HTMLInputElement || field instanceof HTMLSelectElement || field instanceof HTMLTextAreaElement) {
+        field.value = value;
+      }
+    }
+    submittedValues.current = null;
+  }, [state]);
+
   return (
-    <form action={action} onSubmit={ensureIdempotencyKey} className="space-y-6 rounded-xl border border-slate-200 bg-white p-5 sm:p-8">
+    <form ref={formRef} action={action} onSubmit={ensureIdempotencyKey} className="space-y-6 rounded-xl border border-slate-200 bg-white p-5 sm:p-8">
       <input type="hidden" name="idempotency_key" defaultValue="" />
 
       {state.kind === "error" ? (
