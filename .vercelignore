@@ -1,0 +1,5 @@
+.env*
+/design/
+/docs/
+/supabase/
+*.tsbuildinfo

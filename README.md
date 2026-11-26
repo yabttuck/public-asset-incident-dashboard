@@ -11,7 +11,9 @@ npm ci
 npm run dev
 ```
 
-`.env.example`을 참고해 루트에 `.env.local`을 만들고 Supabase 개발 프로젝트의 URL과 publishable key를 설정합니다. `.env.local`은 Git에서 제외됩니다. secret/service-role 키를 브라우저 설정이나 저장소에 넣지 마세요.
+`.env.example`을 참고해 루트에 `.env.local`을 만들고 Supabase 개발 프로젝트의 URL과 publishable key를 설정합니다. 샘플 DB에 연결된 환경에서 관리자 테스트 로그인 버튼을 쓰려면 서버 전용 `TEST_ADMIN_PASSWORD`에도 테스트 관리자 비밀번호를 설정합니다. 버튼을 활성화하면 방문자가 공유 관리자 계정으로 로그인할 수 있습니다. 비밀번호를 `NEXT_PUBLIC_` 변수로 옮기지 마세요. `.env.local`은 Git에서 제외됩니다. secret/service-role 키를 브라우저 설정이나 저장소에 넣지 마세요.
+
+개발용 자산·신고 예시 데이터는 `supabase/seed.sql`을 개발 프로젝트의 SQL Editor에서 실행해 넣을 수 있습니다. `admin@admin.com` 관리자 프로필을 먼저 만들고 활성화해야 합니다. 스크립트는 반복 실행해도 같은 예시 행을 중복 추가하지 않습니다.
 
 ## 확인 명령
 

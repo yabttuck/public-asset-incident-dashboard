@@ -3,8 +3,9 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { getSupabasePublicEnv } from "@/lib/supabase/env";
+import { getTestLoginPassword, getTestReporterCredentials } from "@/lib/auth/test-login";
 
-export async function signIn(formData: FormData) {
+async function signInWithExpectedRole(formData: FormData, expectedRole?: "reporter" | "admin") {
   if (!getSupabasePublicEnv()) {
     redirect("/login?setup=1");
   }
@@ -39,5 +40,38 @@ export async function signIn(formData: FormData) {
     redirect("/login?error=disabled");
   }
 
+  if (expectedRole && profile.role !== expectedRole) {
+    await supabase.auth.signOut();
+    redirect("/login?error=test");
+  }
+
   redirect(profile.role === "reporter" ? "/reporter" : "/ops");
+}
+
+export async function signIn(formData: FormData) {
+  await signInWithExpectedRole(formData);
+}
+
+export async function signInAsTestAdmin() {
+  const password = getTestLoginPassword();
+  if (!password) {
+    redirect("/login?error=test");
+  }
+
+  const formData = new FormData();
+  formData.set("email", "admin@admin.com");
+  formData.set("password", password);
+  await signInWithExpectedRole(formData, "admin");
+}
+
+export async function signInAsTestReporter() {
+  const credentials = getTestReporterCredentials();
+  if (!credentials) {
+    redirect("/login?error=test");
+  }
+
+  const formData = new FormData();
+  formData.set("email", credentials.email);
+  formData.set("password", credentials.password);
+  await signInWithExpectedRole(formData, "reporter");
 }

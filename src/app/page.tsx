@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 const setupItems = [
   {
     number: "01",
@@ -20,8 +22,25 @@ const setupItems = [
 ];
 
 export default function Home() {
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
   return (
     <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 py-8 sm:px-8 sm:py-12">
+      {measurementId && /^G-[A-Z0-9]+$/.test(measurementId) && (
+        <>
+          <Script id="ga-init">
+            {`window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${measurementId}', {
+                page_location: location.origin + '/',
+                page_referrer: document.referrer ? new URL(document.referrer).origin : '',
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false
+              });`}
+          </Script>
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`} />
+        </>
+      )}
       <header className="flex items-center gap-3 border-b border-slate-200 pb-5">
         <span className="grid size-10 place-items-center rounded-full bg-blue-50 text-lg font-bold text-blue-900" aria-hidden="true">
           공

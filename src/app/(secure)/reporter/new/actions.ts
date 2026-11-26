@@ -3,6 +3,7 @@
 import { redirect } from "next/navigation";
 import { getCurrentProfile } from "@/lib/auth/profile";
 import { createClient } from "@/lib/supabase/server";
+import { notifySlackIncident } from "@/lib/notifications/slack";
 
 export type IncidentDuplicate = {
   incident_number: string;
@@ -84,6 +85,16 @@ export async function submitIncident(
   const created = data?.[0];
   if (error || !created) {
     return { kind: "error", message: "신고를 저장하지 못했습니다. 입력 내용을 유지했으니 다시 시도해 주세요." };
+  }
+
+  if (priority === "긴급") {
+    await notifySlackIncident({
+      id: created.id,
+      incident_number: created.incident_number,
+      title,
+      priority,
+      location_snapshot: location || null,
+    });
   }
 
   redirect(`/reporter/incidents/${created.id}?created=1`);
