@@ -1,13 +1,28 @@
-# Stitch 디자인 수정본
+# 공공 자산 장애 신고·관제 대시보드
 
-각 `krds_*/code.html` 파일은 브라우저에서 열어 확인할 수 있는 정적 시안입니다. 실제 인증, 검색, 갱신, 처리 데이터 연동은 구현되어 있지 않으며 화면에 표시된 건수와 신고 내용은 예시입니다.
+Stitch 화면을 기반으로 만든 Next.js 앱입니다. 신고자 접수·본인 신고 조회, 운영자 신고 검색 및 처리, 관리자 자산 관리 화면을 제공합니다. 인증과 데이터는 Supabase Auth/Postgres를 사용하며 DB 접근은 RLS와 제한된 RPC로 보호합니다.
 
-| 폴더 | 페이지 |
-|---|---|
-| `krds_1` | 로그인 |
-| `krds_2` | 운영 대시보드 |
-| `krds_3` | 운영 신고 목록 |
-| `krds_4` | 신고 상세·처리 패널 |
-| `krds_5` | 자산 관리 |
+## 로컬 실행
 
-Tailwind CSS와 아이콘은 CDN을 사용하므로 브라우저에서 스타일을 불러오려면 네트워크 연결이 필요합니다.
+필요 환경: Node.js 20.9 이상, npm 10 이상.
+
+```powershell
+npm ci
+npm run dev
+```
+
+`.env.example`을 참고해 루트에 `.env.local`을 만들고 Supabase 개발 프로젝트의 URL과 publishable key를 설정합니다. `.env.local`은 Git에서 제외됩니다. secret/service-role 키를 브라우저 설정이나 저장소에 넣지 마세요.
+
+## 확인 명령
+
+```powershell
+npm run lint
+npm run typecheck
+npm run build
+```
+
+현재 테스트 러너는 구성되어 있지 않습니다. 개발 Supabase 프로젝트의 스키마는 Dashboard SQL Editor에서 적용했으며, CLI 마이그레이션 이력 정합화 및 역할별 테스트 계정 구성이 후속 과제입니다. 자세한 진행 상태는 [진행 현황](docs/04-구현/진행현황.md), 개발·정책 계획은 [PLAN.md](PLAN.md)를 참고하세요.
+
+## 정적 Stitch 시안
+
+`design/stitch/krds_*/code.html`은 비교용 정적 화면입니다. 실제 앱 라우트나 백엔드 연결은 이 HTML 시안에서 제공하지 않습니다. 시안 목록과 안내는 [design/stitch/README.md](design/stitch/README.md)에 있습니다.
