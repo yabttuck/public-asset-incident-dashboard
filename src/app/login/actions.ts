@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { createClient, endSession } from "@/lib/supabase/server";
 import { getSupabasePublicEnv } from "@/lib/supabase/env";
 import { getTestLoginPassword, getTestReporterCredentials } from "@/lib/auth/test-login";
 
@@ -31,17 +31,17 @@ async function signInWithExpectedRole(formData: FormData, expectedRole?: "report
     .maybeSingle();
 
   if (profileError || !profile) {
-    await supabase.auth.signOut();
+    await endSession(supabase);
     redirect("/login?error=profile");
   }
 
   if (!profile.is_active) {
-    await supabase.auth.signOut();
+    await endSession(supabase);
     redirect("/login?error=disabled");
   }
 
   if (expectedRole && profile.role !== expectedRole) {
-    await supabase.auth.signOut();
+    await endSession(supabase);
     redirect("/login?error=test");
   }
 
