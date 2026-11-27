@@ -72,7 +72,7 @@ export async function submitIncident(
     }
   }
 
-  const { data, error } = await supabase.rpc("create_incident_once", {
+  const { data, error } = await supabase.rpc("create_incident_once_v2", {
     p_idempotency_key: idempotencyKey,
     p_asset_id: assetId,
     p_location_snapshot: location || null,
@@ -87,14 +87,8 @@ export async function submitIncident(
     return { kind: "error", message: "신고를 저장하지 못했습니다. 입력 내용을 유지했으니 다시 시도해 주세요." };
   }
 
-  if (priority === "긴급") {
-    await notifySlackIncident({
-      id: created.id,
-      incident_number: created.incident_number,
-      title,
-      priority,
-      location_snapshot: location || null,
-    });
+  if (created.was_created && created.priority === "긴급") {
+    await notifySlackIncident(created);
   }
 
   redirect(`/reporter/incidents/${created.id}?created=1`);

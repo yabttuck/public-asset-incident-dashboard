@@ -17,6 +17,8 @@ npm run dev
 
 ## 확인 명령
 
+새 신고 처리 코드를 배포하기 전에 대상 DB에 `supabase/migrations/20261127000100_harden_incident_submission.sql`을 적용하세요. 기존 신고 API도 계속 사용할 수 있습니다. 긴급 Slack 알림은 신규 접수 시 한 번만 전송을 시도하며 접수번호와 상세 링크를 포함합니다.
+
 ```powershell
 npm run lint
 npm run typecheck

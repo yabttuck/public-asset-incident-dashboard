@@ -3,9 +3,6 @@ import "server-only";
 type SlackIncident = {
   id: string;
   incident_number: string;
-  title: string;
-  priority: string;
-  location_snapshot: string | null;
 };
 
 export async function notifySlackIncident(incident: SlackIncident) {
@@ -27,9 +24,6 @@ export async function notifySlackIncident(incident: SlackIncident) {
       body: JSON.stringify({
         text: [
           `새 긴급 신고 ${incident.incident_number}`,
-          `우선순위: ${incident.priority}`,
-          `제목: ${incident.title}`,
-          `위치: ${incident.location_snapshot || "미지정"}`,
           `상세: ${appUrl}/ops/incidents/${encodeURIComponent(incident.id)}`,
         ].join("\n"),
         unfurl_links: false,
